@@ -9,6 +9,13 @@ body {
   font-size: 22px;
 }
 
+/* Helperclass to prevent transition to fire on page load.
+    Used together with Javascript to remove class after page load. */
+.preload {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
 .container {
   height: 100vh;
   width: 100%;
