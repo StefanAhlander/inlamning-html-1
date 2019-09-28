@@ -1,5 +1,5 @@
-$background: rgba(63, 73, 96, 1);
-$contrast: rgba(205, 179, 104, 1);
+$background: rgb(40, 45, 54);
+$contrast: rgb(207, 192, 146);
 $background2: rgba(85, 48, 60, 1);
 $textcolor: rgba(244, 248, 255, 1);
 
@@ -9,20 +9,20 @@ $desktop-width: 1024px;
 
 @mixin mobile-lg {
     @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
-      @content;
+        @content;
     }
-  }
+}
 
 @mixin tablet {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-    @content;
-  }
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
 }
 
 @mixin desktop {
-  @media (min-width: #{$desktop-width}) {
-    @content;
-  }
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
 }
 
 
@@ -66,24 +66,124 @@ body {
         left: -110%;
         display: inline-block;
         width: 50%;
+
         img {
             width: auto;
             height: 100vh;
         }
 
-        @include mobile-lg(){
+        @include mobile-lg() {
             left: -85%;
         }
 
-        @include tablet(){
+        @include tablet() {
             left: -50%;
         }
 
-        @include desktop(){
+        @include desktop() {
             left: -15%;
         }
     }
 
+}
+
+nav {
+    background: $background;
+    color: $contrast;
+    font-family: Arial, Helvetica, sans-serif;
+
+    a {
+        text-decoration: none;
+        color: $background;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    #menuToggle {
+        display: block;
+        position: fixed;
+        top: 50px;
+        left: 50px;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+        -webkit-touch-callout: none;
+    }
+
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: $contrast;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s ease-in-out,
+            background 0.5s ease-in-out,
+            opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: $background;
+    }
+
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    #menu {
+        position: absolute;
+        width: 425px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        background: $contrast;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #menu li {
+        padding: 10px 0;
+    }
+
+    #menuToggle input:checked~ul {
+        transform: none;
+    }
 }
 
 header {
@@ -92,7 +192,6 @@ header {
     height: 100vh;
     width: 100%;
     margin-left: auto;
-    margin-right: 5vw;
     font-family: Monospace, Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
@@ -112,12 +211,14 @@ header {
             animation-name: blinking_cursor;
             animation-duration: 1.5s;
             animation-iteration-count: infinite;
+            border-bottom: .1em solid $textcolor;
             position: absolute;
             bottom: 0.1em;
         }
     }
 
     @include tablet() {
+        margin-right: 5vw;
 
         h1 {
             font-size: 2.5em;
@@ -128,7 +229,8 @@ header {
         }
     }
 
-    @include desktop(){
+    @include desktop() {
+        margin-right: 5vw;
         width: 50%;
         text-align: left;
 
@@ -144,19 +246,19 @@ header {
 
 @keyframes blinking_cursor {
     0% {
-        border-bottom: .1em solid rgba(0, 0, 0, 0);
+        border-bottom-color: rgba(0, 0, 0, 0);
     }
 
     49% {
-        border-bottom: .1em solid rgba(0, 0, 0, 0);
+        border-bottom-color: rgba(0, 0, 0, 0);
     }
 
     50% {
-        border-bottom: .1em solid $textcolor;
+        border-bottom-color: $textcolor;
     }
 
     100% {
-        border-bottom: .1em solid $textcolor;
+        border-bottom-color: $textcolor;
     }
 }
 
