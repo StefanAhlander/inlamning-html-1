@@ -49,6 +49,7 @@ body {
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
+    scroll-behavior: smooth;
 
     .parallaxx {
         height: 100vh;
