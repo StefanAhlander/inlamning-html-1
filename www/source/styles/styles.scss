@@ -3,15 +3,42 @@ $contrast: rgba(205, 179, 104, 1);
 $background2: rgba(85, 48, 60, 1);
 $textcolor: rgba(244, 248, 255, 1);
 
+$mobile-width: 425px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile-lg {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+      @content;
+    }
+  }
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
     font-size: 22px;
 }
 
 .container {
     height: 100vh;
+    width: 100%;
     perspective: 2px;
     position: relative;
     overflow-x: hidden;
@@ -24,21 +51,37 @@ $textcolor: rgba(244, 248, 255, 1);
         left: 0;
         bottom: 0;
         right: 0;
-        width: 100%;
     }
 
     .back_layer_2 {
         background-image: url("../imgages/sai-kiran-anagani-5Ntkpxqt54Y-unsplash-1920x1080.jpg");
         z-index: -2;
-        transform: translateZ(-3px) scale(2.5);
+        transform: translateZ(-3px) scale(2.6);
+
     }
 
     .back_layer_1 {
-        background-image: url("../imgages/stefan-kostym.png");
-        background-size: cover;
         z-index: -1;
-        width: 40%;
         transform: translateZ(-2px) scale(2);
+        left: -110%;
+        display: inline-block;
+        width: 50%;
+        img {
+            width: auto;
+            height: 100vh;
+        }
+
+        @include mobile-lg(){
+            left: -85%;
+        }
+
+        @include tablet(){
+            left: -50%;
+        }
+
+        @include desktop(){
+            left: -15%;
+        }
     }
 
 }
@@ -47,36 +90,75 @@ header {
     color: $textcolor;
     text-shadow: 0 2px 5px #000;
     height: 100vh;
-    width: 50%;
+    width: 100%;
     margin-left: auto;
+    margin-right: 5vw;
     font-family: Monospace, Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
     h1 {
-        font-size: 3em;
+        font-size: 1.5em;
     }
 
     p {
-        font-size: 2em;
+        font-size: 1em;
+        position: relative;
 
         span {
             animation-name: blinking_cursor;
             animation-duration: 1.5s;
             animation-iteration-count: infinite;
-            margin-bottom: -.2em;
+            position: absolute;
+            bottom: 0.1em;
+        }
+    }
+
+    @include tablet() {
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+    }
+
+    @include desktop(){
+        width: 50%;
+        text-align: left;
+
+        h1 {
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 2em;
         }
     }
 }
 
 @keyframes blinking_cursor {
-    0%   {border-bottom: .2em solid rgba(0,0,0,0);}
-    49%   {border-bottom: .2em solid rgba(0,0,0,0);}
-    50%  {border-bottom: .2em solid $textcolor;}
-    100%  {border-bottom: .2em solid $textcolor;}
-  }
+    0% {
+        border-bottom: .1em solid rgba(0, 0, 0, 0);
+    }
+
+    49% {
+        border-bottom: .1em solid rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        border-bottom: .1em solid $textcolor;
+    }
+
+    100% {
+        border-bottom: .1em solid $textcolor;
+    }
+}
 
 .normal_flow {
     height: 1000px;

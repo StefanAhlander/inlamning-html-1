@@ -3,11 +3,15 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
   font-size: 22px;
 }
 
 .container {
   height: 100vh;
+  width: 100%;
   -webkit-perspective: 2px;
           perspective: 2px;
   position: relative;
@@ -22,31 +26,54 @@
   left: 0;
   bottom: 0;
   right: 0;
-  width: 100%;
 }
 
 .container .back_layer_2 {
   background-image: url("../imgages/sai-kiran-anagani-5Ntkpxqt54Y-unsplash-1920x1080.jpg");
   z-index: -2;
-  -webkit-transform: translateZ(-3px) scale(2.5);
-          transform: translateZ(-3px) scale(2.5);
+  -webkit-transform: translateZ(-3px) scale(2.6);
+          transform: translateZ(-3px) scale(2.6);
 }
 
 .container .back_layer_1 {
-  background-image: url("../imgages/stefan-kostym.png");
-  background-size: cover;
   z-index: -1;
-  width: 40%;
   -webkit-transform: translateZ(-2px) scale(2);
           transform: translateZ(-2px) scale(2);
+  left: -110%;
+  display: inline-block;
+  width: 50%;
+}
+
+.container .back_layer_1 img {
+  width: auto;
+  height: 100vh;
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .container .back_layer_1 {
+    left: -85%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container .back_layer_1 {
+    left: -50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container .back_layer_1 {
+    left: -15%;
+  }
 }
 
 header {
   color: #f4f8ff;
   text-shadow: 0 2px 5px #000;
   height: 100vh;
-  width: 50%;
+  width: 100%;
   margin-left: auto;
+  margin-right: 5vw;
   font-family: Monospace, Arial, Helvetica, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,14 +88,16 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
 }
 
 header h1 {
-  font-size: 3em;
+  font-size: 1.5em;
 }
 
 header p {
-  font-size: 2em;
+  font-size: 1em;
+  position: relative;
 }
 
 header p span {
@@ -78,36 +107,59 @@ header p span {
           animation-duration: 1.5s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  margin-bottom: -.2em;
+  position: absolute;
+  bottom: 0.1em;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+  header p {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    width: 50%;
+    text-align: left;
+  }
+  header h1 {
+    font-size: 3em;
+  }
+  header p {
+    font-size: 2em;
+  }
 }
 
 @-webkit-keyframes blinking_cursor {
   0% {
-    border-bottom: 0.2em solid rgba(0, 0, 0, 0);
+    border-bottom: 0.1em solid rgba(0, 0, 0, 0);
   }
   49% {
-    border-bottom: 0.2em solid rgba(0, 0, 0, 0);
+    border-bottom: 0.1em solid rgba(0, 0, 0, 0);
   }
   50% {
-    border-bottom: 0.2em solid #f4f8ff;
+    border-bottom: 0.1em solid #f4f8ff;
   }
   100% {
-    border-bottom: 0.2em solid #f4f8ff;
+    border-bottom: 0.1em solid #f4f8ff;
   }
 }
 
 @keyframes blinking_cursor {
   0% {
-    border-bottom: 0.2em solid rgba(0, 0, 0, 0);
+    border-bottom: 0.1em solid rgba(0, 0, 0, 0);
   }
   49% {
-    border-bottom: 0.2em solid rgba(0, 0, 0, 0);
+    border-bottom: 0.1em solid rgba(0, 0, 0, 0);
   }
   50% {
-    border-bottom: 0.2em solid #f4f8ff;
+    border-bottom: 0.1em solid #f4f8ff;
   }
   100% {
-    border-bottom: 0.2em solid #f4f8ff;
+    border-bottom: 0.1em solid #f4f8ff;
   }
 }
 
