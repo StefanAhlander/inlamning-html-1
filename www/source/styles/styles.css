@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 22px;
+}
+
+.container {
+  height: 100vh;
+  -webkit-perspective: 2px;
+          perspective: 2px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.container .parallaxx {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.container .back_layer_2 {
+  background-image: url("../imgages/sai-kiran-anagani-5Ntkpxqt54Y-unsplash-1920x1080.jpg");
+  z-index: -2;
+  -webkit-transform: translateZ(-3px) scale(2.5);
+          transform: translateZ(-3px) scale(2.5);
+}
+
+.container .back_layer_1 {
+  background-image: url("../imgages/stefan-kostym.png");
+  background-size: cover;
+  z-index: -1;
+  width: 40%;
+  -webkit-transform: translateZ(-2px) scale(2);
+          transform: translateZ(-2px) scale(2);
+}
+
+header {
+  color: #f4f8ff;
+  text-shadow: 0 2px 5px #000;
+  height: 100vh;
+  width: 50%;
+  margin-left: auto;
+  font-family: Monospace, Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header h1 {
+  font-size: 3em;
+}
+
+header p {
+  font-size: 2em;
+}
+
+header p span {
+  -webkit-animation-name: blinking_cursor;
+          animation-name: blinking_cursor;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  margin-bottom: -.2em;
+}
+
+@-webkit-keyframes blinking_cursor {
+  0% {
+    border-bottom: 0.2em solid rgba(0, 0, 0, 0);
+  }
+  49% {
+    border-bottom: 0.2em solid rgba(0, 0, 0, 0);
+  }
+  50% {
+    border-bottom: 0.2em solid #f4f8ff;
+  }
+  100% {
+    border-bottom: 0.2em solid #f4f8ff;
+  }
+}
+
+@keyframes blinking_cursor {
+  0% {
+    border-bottom: 0.2em solid rgba(0, 0, 0, 0);
+  }
+  49% {
+    border-bottom: 0.2em solid rgba(0, 0, 0, 0);
+  }
+  50% {
+    border-bottom: 0.2em solid #f4f8ff;
+  }
+  100% {
+    border-bottom: 0.2em solid #f4f8ff;
+  }
+}
+
+.normal_flow {
+  height: 1000px;
+  background-color: #3f4960;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,84 @@
+$background: rgba(63, 73, 96, 1);
+$contrast: rgba(205, 179, 104, 1);
+$background2: rgba(85, 48, 60, 1);
+$textcolor: rgba(244, 248, 255, 1);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 22px;
+}
+
+.container {
+    height: 100vh;
+    perspective: 2px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .parallaxx {
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .back_layer_2 {
+        background-image: url("../imgages/sai-kiran-anagani-5Ntkpxqt54Y-unsplash-1920x1080.jpg");
+        z-index: -2;
+        transform: translateZ(-3px) scale(2.5);
+    }
+
+    .back_layer_1 {
+        background-image: url("../imgages/stefan-kostym.png");
+        background-size: cover;
+        z-index: -1;
+        width: 40%;
+        transform: translateZ(-2px) scale(2);
+    }
+
+}
+
+header {
+    color: $textcolor;
+    text-shadow: 0 2px 5px #000;
+    height: 100vh;
+    width: 50%;
+    margin-left: auto;
+    font-family: Monospace, Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        font-size: 3em;
+    }
+
+    p {
+        font-size: 2em;
+
+        span {
+            animation-name: blinking_cursor;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            margin-bottom: -.2em;
+        }
+    }
+}
+
+@keyframes blinking_cursor {
+    0%   {border-bottom: .2em solid rgba(0,0,0,0);}
+    49%   {border-bottom: .2em solid rgba(0,0,0,0);}
+    50%  {border-bottom: .2em solid $textcolor;}
+    100%  {border-bottom: .2em solid $textcolor;}
+  }
+
+.normal_flow {
+    height: 1000px;
+    background-color: $background;
+}
