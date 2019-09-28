@@ -110,7 +110,7 @@ nav {
 
     #menuToggle {
         display: block;
-        position: fixed;
+        position: absolute;
         top: 50px;
         left: 50px;
         z-index: 1;
@@ -142,8 +142,8 @@ nav {
         z-index: 1;
         transform-origin: 4px 0px;
         transition: transform 0.5s ease-in-out,
-            background 0.5s ease-in-out,
-            opacity 0.55s ease;
+                    background-color 0.5s ease-in-out,
+                    opacity 0.55s ease;
     }
 
     #menuToggle span:first-child {
@@ -194,7 +194,7 @@ nav {
 
 header {
     color: $textcolor;
-    text-shadow: 0 2px 5px #000;
+    text-shadow: 0 2px 5px $background;
     height: 100vh;
     width: 100%;
     margin-left: auto;
