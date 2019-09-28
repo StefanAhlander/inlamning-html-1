@@ -47,7 +47,7 @@ body {
   z-index: -1;
   -webkit-transform: translateZ(-2px) scale(2);
           transform: translateZ(-2px) scale(2);
-  left: -110%;
+  left: -70%;
   display: inline-block;
   width: 50%;
 }
@@ -59,7 +59,7 @@ body {
 
 @media (min-width: 425px) and (max-width: 767px) {
   .container .back_layer_1 {
-    left: -85%;
+    left: -60%;
   }
 }
 
@@ -95,22 +95,27 @@ nav a:hover {
 nav #menuToggle {
   display: block;
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 10px;
+  left: 10px;
   z-index: 1;
   -webkit-user-select: none;
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;
+  background-color: #000;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  padding: 26px 22px 20px;
 }
 
 nav #menuToggle input {
   display: block;
-  width: 40px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   position: absolute;
-  top: -7px;
-  left: -5px;
+  top: 15px;
+  left: 15px;
   cursor: pointer;
   opacity: 0;
   z-index: 2;
@@ -164,7 +169,7 @@ nav #menuToggle input:checked ~ span:nth-last-child(2) {
 
 nav #menu {
   position: absolute;
-  width: 425px;
+  width: 350px;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
