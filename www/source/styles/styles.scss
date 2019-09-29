@@ -71,17 +71,15 @@ body {
     }
 
     .back_layer_2 {
-        background-image: url("../imgages/sai-kiran-anagani-5Ntkpxqt54Y-unsplash-1920x1080.jpg");
         z-index: -2;
         transform: translateZ(-3px) scale(2.6);
-
+        img {
+            width: 100%;
+            height: 100%;
+        }
     }
 
     .back_layer_1 {
-        background-image: url("../imgages/stefan-kostym.png");
-        background-repeat: no-repeat;
-        background-position: left bottom;
-        background-size: cover;
         z-index: -1;
         transform: translateZ(-2px) scale(2);
 
