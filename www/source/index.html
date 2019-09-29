@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="se-sv">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +8,9 @@
     <title>Stefan Åhlander - profile</title>
 </head>
 
-<body>
+<body id="home">
     <nav role="navigation" class="preload">
-        <div id="menuToggle">
+        <div id="menu_container">
             <input type="checkbox" />
 
             <span></span>
@@ -24,6 +23,9 @@
                 </a>
                 <a href="#about">
                     <li>About</li>
+                </a>
+                <a href="#skills">
+                    <li>Skills</li>
                 </a>
                 <a href="#samples">
                     <li>Samples</li>
@@ -44,22 +46,24 @@
 
         </div>
 
-        <header id="home">
+        <header>
             <h1>Hi! I'm Stefan Åhlander</h1>
             <p>Soon to be a Fullstack Developer</p>
             <p>Lets begin&hellip;<span>&nbsp;</span></span>
         </header>
 
-        <main class="normal_flow">
-            <section id="about">
+        <main class="normal_flow" >
+            <article id="about">
 
-            </section>
+            </article>
         </main>
 
         <footer id="contact">
 
         </footer>
     </div>
+
+    <!-- Javascript to eliminate transitions to fire on page load  -->
     <script src="./js/main.js"></script>
 </body>
 

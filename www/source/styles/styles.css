@@ -1,3 +1,4 @@
+/*  Reset styling. */
 * {
   padding: 0;
   margin: 0;
@@ -7,24 +8,27 @@
 
 body {
   font-size: 22px;
+  overflow-y: hidden;
 }
 
-/* Helperclass to prevent transition to fire on page load.
-    Used together with Javascript to remove class after page load. */
+/*  Helperclass to prevent transitions to fire on page load.
+    Used together with Javascript to remove this class after page has loaded. */
 .preload {
   -webkit-transition: none !important;
   transition: none !important;
 }
 
 .container {
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   -webkit-perspective: 2px;
           perspective: 2px;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
+  position: relative;
+  top: 80px;
 }
 
 .container .parallaxx {
@@ -80,55 +84,78 @@ body {
 }
 
 nav {
-  background: #282d36;
+  /*  Set upp navigation field, background and color. */
+  background: #55303c;
   color: #cfc092;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-nav a {
-  text-decoration: none;
-  color: #282d36;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-nav #menuToggle {
-  display: block;
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  width: 100vw;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
-  background-color: #000;
-  border-radius: 50%;
-  width: 75px;
-  height: 75px;
-  padding: 26px 22px 20px;
+  /*  Setup container-element for "hamburger-menu". */
+  /* Style the slide in menu. Transform menu out of view. */
 }
 
-nav #menuToggle input {
+nav #menu_container {
+  position: absolute;
+  z-index: 2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #282d36;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  padding: 21px 16px 20px;
+  margin: 5px;
+  border: 3px solid #cfc092;
+  -webkit-perspective: 1200px;
+          perspective: 1200px;
+  /*  Style input-checkbox to overlay "hamburger-menu" but to be transparent.
+            This is the element that will toggle the menu on checked. */
+  /*  Setup the bars for the "hamburger-menu" also set up transition on
+            input checked. */
+  /* Remove transformation on the menu to make it appear. */
+}
+
+nav #menu_container input {
   display: block;
   width: 48px;
   height: 48px;
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 10px;
+  left: 10px;
   cursor: pointer;
   opacity: 0;
   z-index: 2;
   -webkit-touch-callout: none;
+  /* transition span-elements on input-checked. */
 }
 
-nav #menuToggle span {
+nav #menu_container input:checked ~ span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(-2px, -1px);
+          transform: rotate(45deg) translate(-2px, -1px);
+  background: #282d36;
+}
+
+nav #menu_container input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+nav #menu_container input:checked ~ span:nth-last-child(2) {
+  -webkit-transform: rotate(-45deg) translate(0, -1px);
+          transform: rotate(-45deg) translate(0, -1px);
+}
+
+nav #menu_container span {
   display: block;
-  width: 33px;
+  width: 34px;
   height: 4px;
   margin-bottom: 5px;
   position: relative;
@@ -143,65 +170,105 @@ nav #menuToggle span {
   transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, opacity 0.55s ease, -webkit-transform 0.5s ease-in-out;
 }
 
-nav #menuToggle span:first-child {
+nav #menu_container span:first-child {
   -webkit-transform-origin: 0% 0%;
           transform-origin: 0% 0%;
 }
 
-nav #menuToggle span:nth-last-child(2) {
+nav #menu_container span:nth-last-child(2) {
   -webkit-transform-origin: 0% 100%;
           transform-origin: 0% 100%;
 }
 
-nav #menuToggle input:checked ~ span {
+nav #menu_container input:checked ~ ul {
+  -webkit-transform: none;
+          transform: none;
   opacity: 1;
-  -webkit-transform: rotate(45deg) translate(-2px, -1px);
-          transform: rotate(45deg) translate(-2px, -1px);
-  background: #282d36;
-}
-
-nav #menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
-          transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-nav #menuToggle input:checked ~ span:nth-last-child(2) {
-  -webkit-transform: rotate(-45deg) translate(0, -1px);
-          transform: rotate(-45deg) translate(0, -1px);
 }
 
 nav #menu {
   position: absolute;
-  width: 350px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
+  width: 375px;
+  margin: -56px 0 0 -24px;
+  padding: 80px 0 30px 50px;
   background: #cfc092;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  -webkit-transform-origin: 0% 0%;
-          transform-origin: 0% 0%;
-  -webkit-transform: translate(-100%, 0);
-          transform: translate(-100%, 0);
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transform-origin: 0% 80px;
+          transform-origin: 0% 80px;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear, -webkit-transform 0.5s ease-in-out;
+  transition: opacity 0.5s linear, -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s linear;
+  transition: transform 0.5s ease-in-out, opacity 0.5s linear, -webkit-transform 0.5s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+nav #menu a {
+  text-decoration: none;
+  color: #282d36;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+nav #menu a:hover {
+  text-decoration: underline;
 }
 
 nav #menu li {
   padding: 10px 0;
 }
 
-nav #menuToggle input:checked ~ ul {
-  -webkit-transform: none;
-          transform: none;
+@media (min-width: 1024px) {
+  nav #menu_container {
+    position: absolute;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background-color: #282d36;
+    border-radius: 0;
+    width: 100vw;
+    height: 75px;
+    padding: 20px;
+    border: 0;
+    margin: 0;
+    -webkit-perspective: 0;
+            perspective: 0;
+  }
+  nav #menu_container input,
+  nav #menu_container span {
+    display: none;
+  }
+  nav #menu {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #282d36;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+  }
+  nav #menu li {
+    display: inline-block;
+    padding: 0 0 0 1em;
+    color: #cfc092;
+    font-size: 1.5em;
+  }
+  nav #menu li:hover {
+    text-decoration: underline;
+  }
 }
 
 header {
   color: #f4f4f4;
-  text-shadow: 0 3px 4px #000;
+  text-shadow: 0 2px 4px #000;
   height: 100vh;
   width: 100%;
   margin-left: auto;
@@ -299,6 +366,7 @@ header p span {
   }
 }
 
+/* Temp helper class */
 .normal_flow {
   height: 1000px;
   background-color: #282d36;

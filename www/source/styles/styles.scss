@@ -7,6 +7,8 @@ $mobile-width: 360px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
+$navheight: 80px;
+
 @mixin mobile-lg {
     @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
         @content;
@@ -25,7 +27,7 @@ $desktop-width: 1024px;
     }
 }
 
-
+/*  Reset styling. */
 * {
     padding: 0;
     margin: 0;
@@ -34,22 +36,24 @@ $desktop-width: 1024px;
 
 body {
     font-size: 22px;
+    overflow-y: hidden;
 }
-
-/* Helperclass to prevent transition to fire on page load.
-    Used together with Javascript to remove class after page load. */
+    /*  Helperclass to prevent transitions to fire on page load.
+    Used together with Javascript to remove this class after page has loaded. */
 .preload {
     transition: none !important;
 }
 
 .container {
-    height: 100vh;
     width: 100%;
+    height: 100vh;
     perspective: 2px;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
+    position: relative;
+    top: $navheight;
 
     .parallaxx {
         height: 100vh;
@@ -99,112 +103,172 @@ body {
 }
 
 nav {
-    background: $background;
+    /*  Set upp navigation field, background and color. */
+    background: $background2;
     color: $contrast;
     font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: $navheight;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
 
-    a {
-        text-decoration: none;
-        color: $background;
-        transition: color 0.3s ease;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    #menuToggle {
-        display: block;
+    /*  Setup container-element for "hamburger-menu". */
+    #menu_container {
         position: absolute;
-        top: 10px;
-        left: 10px;
-        z-index: 1;
-        -webkit-user-select: none;
-        user-select: none;
-        background-color: #000;
-        border-radius: 50%;
-        width: 75px;
-        height: 75px;
-        padding: 26px 22px 20px;
-    }
-
-    #menuToggle input {
-        display: block;
-        width: 48px;
-        height: 48px;
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        cursor: pointer;
-        opacity: 0;
         z-index: 2;
-        -webkit-touch-callout: none;
+        user-select: none;
+        background-color: $background;
+        border-radius: 50%;
+        width: $navheight - 10px;
+        height: $navheight - 10px;
+        padding: 21px 16px 20px;
+        margin: 5px;
+        border: 3px solid $contrast;
+        perspective: 1200px;
+
+        /*  Style input-checkbox to overlay "hamburger-menu" but to be transparent.
+            This is the element that will toggle the menu on checked. */
+        input {
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            opacity: 0;
+            z-index: 2;
+            -webkit-touch-callout: none;
+
+            /* transition span-elements on input-checked. */
+            &:checked~span {
+                opacity: 1;
+                transform: rotate(45deg) translate(-2px, -1px);
+                background: $background;
+            }
+
+            &:checked~span:nth-last-child(3) {
+                opacity: 0;
+                transform: rotate(0deg) scale(0.2, 0.2);
+            }
+
+            &:checked~span:nth-last-child(2) {
+                transform: rotate(-45deg) translate(0, -1px);
+            }
+        }
+
+        /*  Setup the bars for the "hamburger-menu" also set up transition on
+            input checked. */
+        span {
+            display: block;
+            width: 34px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+            background: $contrast;
+            border-radius: 3px;
+            z-index: 1;
+            transform-origin: 4px 0px;
+            transition: transform 0.5s ease-in-out,
+                background-color 0.5s ease-in-out,
+                opacity 0.55s ease;
+
+            &:first-child {
+                transform-origin: 0% 0%;
+            }
+
+            &:nth-last-child(2) {
+                transform-origin: 0% 100%;
+            }
+        }
+
+        /* Remove transformation on the menu to make it appear. */
+        input:checked~ul {
+            transform: none;
+            opacity: 1;
+        }
     }
 
-    #menuToggle span {
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        background: $contrast;
-        border-radius: 3px;
-        z-index: 1;
-        transform-origin: 4px 0px;
-        transition: transform 0.5s ease-in-out,
-                    background-color 0.5s ease-in-out,
-                    opacity 0.55s ease;
-    }
-
-    #menuToggle span:first-child {
-        transform-origin: 0% 0%;
-    }
-
-    #menuToggle span:nth-last-child(2) {
-        transform-origin: 0% 100%;
-    }
-
-    #menuToggle input:checked~span {
-        opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
-        background: $background;
-    }
-
-    #menuToggle input:checked~span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-    }
-
-    #menuToggle input:checked~span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
-    }
-
+    /* Style the slide in menu. Transform menu out of view. */
     #menu {
         position: absolute;
-        width: 350px;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        padding-top: 125px;
+        width: 375px;
+        margin: -56px 0 0 -24px;
+        padding: 80px 0 30px 50px;
         background: $contrast;
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
-        transform-origin: 0% 0%;
-        transform: translate(-100%, 0);
-        transition: transform 0.5s ease-in-out;
+        transform-origin: 0% $navheight;
+        transform: rotateX(-90deg);
+        opacity: 0;
+        transition: transform 0.5s ease-in-out,
+            opacity 0.5s linear;
+        transform-style: preserve-3d;
+
+        a {
+            text-decoration: none;
+            color: $background;
+            transition: color 0.3s ease;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        li {
+            padding: 10px 0;
+        }
     }
 
-    #menu li {
-        padding: 10px 0;
-    }
+    @include desktop() {
+        #menu_container {
+            position: absolute;
+            user-select: none;
+            background-color: $background;
+            border-radius: 0;
+            width: 100vw;
+            height: $navheight - 5px;
+            padding: 20px;
+            border: 0;
+            margin: 0;
+            perspective: 0;
+        }
 
-    #menuToggle input:checked~ul {
-        transform: none;
+        #menu_container input,
+        #menu_container span {
+            display: none;
+        }
+
+        #menu {
+            position: absolute;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: $background;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            transform: none;
+            opacity: 1;
+
+            li {
+                display: inline-block;
+                padding: 0 0 0 1em;
+                color: $contrast;
+                font-size: 1.5em;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 }
 
 header {
     color: $textcolor;
-    text-shadow: 0 3px 4px #000;
+    text-shadow: 0 2px 4px #000;
     height: 100vh;
     width: 100%;
     margin-left: auto;
@@ -278,6 +342,7 @@ header {
     }
 }
 
+/* Temp helper class */
 .normal_flow {
     height: 1000px;
     background-color: $background;
