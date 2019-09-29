@@ -38,6 +38,7 @@ body {
     font-size: 22px;
     overflow-y: hidden;
 }
+
 /*  Helperclass to prevent transitions to fire on page load.
     Used together with Javascript to remove this class after page has loaded. */
 .preload {
@@ -60,7 +61,7 @@ body {
     position: relative;
     top: $navheight;
 
-    .parallaxx {
+    .parallax {
         height: 100vh;
         position: absolute;
         top: 0;
@@ -72,6 +73,7 @@ body {
     .back_layer_2 {
         z-index: -2;
         transform: translateZ(-3px) scale(2.6);
+
         img {
             width: 100%;
             height: 100%;
@@ -81,12 +83,25 @@ body {
     .back_layer_1 {
         z-index: -1;
         transform: translateZ(-2px) scale(2);
+
         img {
             width: auto;
             height: 100vh;
         }
     }
+}
 
+/*  If browser is IE or Edge don't use parallax scroll. */
+.ie .container {
+    perspective: 0px;
+
+    .back_layer_2 {
+        transform: none;
+    }
+
+    .back_layer_1 {
+        transform: none;
+    }
 }
 
 nav {
