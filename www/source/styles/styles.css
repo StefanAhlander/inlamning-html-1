@@ -29,7 +29,6 @@ body {
   height: 100vh;
   -webkit-perspective: 2px;
           perspective: 2px;
-  position: relative;
   overflow-x: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -66,27 +65,6 @@ body {
 .container .back_layer_1 img {
   width: auto;
   height: 100vh;
-}
-
-@media (min-width: 360px) and (max-width: 767px) {
-  .container .back_layer_1 {
-    background-position: 10% bottom;
-    background-size: contain;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .container .back_layer_1 {
-    background-position: 15% bottom;
-    background-size: contain;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container .back_layer_1 {
-    background-position: 20% bottom;
-    background-size: contain;
-  }
 }
 
 nav {
