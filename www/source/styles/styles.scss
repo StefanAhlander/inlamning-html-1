@@ -38,12 +38,18 @@ body {
     font-size: 22px;
     overflow-y: hidden;
 }
-    /*  Helperclass to prevent transitions to fire on page load.
+/*  Helperclass to prevent transitions to fire on page load.
     Used together with Javascript to remove this class after page has loaded. */
 .preload {
     transition: none !important;
 }
 
+/* Helper-id to fix scrolling to home issue caused by fixed nav. */
+#home {
+    margin-top: -$navheight;
+}
+
+/* Container-element for all content besides navigation. */
 .container {
     width: 100%;
     height: 100vh;

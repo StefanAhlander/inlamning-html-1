@@ -18,6 +18,12 @@ body {
   transition: none !important;
 }
 
+/* Helper-id to fix scrolling to home issue caused by fixed nav. */
+#home {
+  margin-top: -80px;
+}
+
+/* Container-element for all content besides navigation. */
 .container {
   width: 100%;
   height: 100vh;
