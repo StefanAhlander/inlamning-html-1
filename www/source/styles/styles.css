@@ -219,7 +219,7 @@ nav #menu {
 
 nav #menu a {
   text-decoration: none;
-  color: #282d36;
+  color: #cfc092;
 }
 
 nav #menu a:hover {
@@ -510,6 +510,11 @@ main #skills ul #skill-6 {
 }
 
 main #skills ul #skill-7 {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(20%, #b8a15d), color-stop(20%, #55303c));
+  background: linear-gradient(to top, #b8a15d 20%, #55303c 20% 100%);
+}
+
+main #skills ul #skill-8 {
   background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #b8a15d), color-stop(50%, #55303c));
   background: linear-gradient(to top, #b8a15d 50%, #55303c 50% 100%);
 }
@@ -519,6 +524,13 @@ main #samples {
   -ms-grid-column: 1;
   grid-area: samples;
   background-color: #f4f4f4;
+}
+
+main #samples iframe {
+  width: 90vw;
+  height: 80vh;
+  border: 3px solid #282d36;
+  background-color: white;
 }
 
 main #contact {

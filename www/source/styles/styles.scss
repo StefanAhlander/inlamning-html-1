@@ -217,7 +217,7 @@ nav {
 
         a {
             text-decoration: none;
-            color: $background;
+            color: $contrast;
 
             &:hover {
                 text-decoration: underline;
@@ -462,6 +462,10 @@ main {
             }
 
             #skill-7 {
+                background: linear-gradient(to top, darken($contrast, 15) 20%, $background2 20% 100%);
+            }
+
+            #skill-8 {
                 background: linear-gradient(to top, darken($contrast, 15) 50%, $background2 50% 100%);
             }
         }
@@ -470,6 +474,14 @@ main {
     #samples {
         grid-area: samples;
         background-color: $textcolor;
+
+        iframe {
+            width: 90vw;
+            height: 80vh;
+            border: 3px solid $background;
+            background-color: white;
+            
+        }
     }
 
     #contact {
