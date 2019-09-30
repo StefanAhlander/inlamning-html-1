@@ -217,7 +217,7 @@ nav {
 
         a {
             text-decoration: none;
-            color: $contrast;
+            color: $background;
 
             &:hover {
                 text-decoration: underline;
@@ -261,11 +261,10 @@ nav {
             li {
                 display: inline-block;
                 padding: 0 0 0 1em;
-                color: $contrast;
                 font-size: 1.5em;
 
-                &:hover {
-                    text-decoration: underline;
+                a {
+                    color: $contrast;
                 }
             }
         }

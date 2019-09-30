@@ -219,7 +219,7 @@ nav #menu {
 
 nav #menu a {
   text-decoration: none;
-  color: #cfc092;
+  color: #282d36;
 }
 
 nav #menu a:hover {
@@ -265,11 +265,10 @@ nav #menu li {
   nav #menu li {
     display: inline-block;
     padding: 0 0 0 1em;
-    color: #cfc092;
     font-size: 1.5em;
   }
-  nav #menu li:hover {
-    text-decoration: underline;
+  nav #menu li a {
+    color: #cfc092;
   }
 }
 
