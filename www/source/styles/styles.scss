@@ -111,7 +111,7 @@ body:not(.ie) .container {
 
 nav {
     /*  Set upp navigation field, background and color. */
-    background: $background2;
+    background: linear-gradient(to right, $background2, lighten($background2, 40) 100%);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: $contrast;
     font-family: Arial, Helvetica, sans-serif;
@@ -356,16 +356,18 @@ main {
     grid-template-areas:
         "about"
         "skills"
-        "samples";
+        "samples"
+        "footer";
 
-    article, section {
+    article,
+    section {
         min-height: 100vh;
         padding: ($navheight +5) 1em 1em;
     }
 
     h2 {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.2em;
+        font-size: 1.3em;
         margin-bottom: 1em;
 
     }
@@ -373,7 +375,8 @@ main {
     p {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 1em;
-        margin-bottom: 0.5em;
+        margin-bottom: 1em;
+        line-height: 1.5em;
     }
 
     #about {
@@ -386,23 +389,104 @@ main {
         grid-area: skills;
         color: $textcolor;
         background-color: $background;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+
+        h2 {
+            text-align: center;
+        }
 
         ul {
             list-style-type: none;
-        
-        span {
-            display: block;
-        }
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: monospace, Arial, Helvetica, sans-serif;
 
-        span+span {
-            width: 5em;
-            height: 5em;
-            background-color: $background2;
-            border: 4px solid $contrast;
-            border-radius: 50%;
+            li {
+                display: block;
+                padding: 1.5em;
+            }
 
-        }
-        }
+            span {
+                display: block;
+                margin-bottom: 0.5em;
+            }
 
+            span+span {
+                width: 5em;
+                height: 5em;
+                background-color: $background2;
+                border: 4px solid $contrast;
+                border-radius: 50%;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            span>span {
+                top: -4px;
+                left: -4px;
+                width: 5em;
+                height: 5em;
+                border: 4px solid $contrast;
+                border-radius: 50%;
+                margin: 0 auto;
+                position: absolute;
+            }
+
+            #skill-1 {
+                background: linear-gradient(to top, darken($contrast, 15) 60%, $background2 60% 100%);
+            }
+
+            #skill-2 {
+                background: linear-gradient(to top, darken($contrast, 15) 60%, $background2 60% 100%);
+            }
+
+            #skill-3 {
+                background: linear-gradient(to top, darken($contrast, 15) 30%, $background2 30% 100%);
+            }
+
+            #skill-4 {
+                background: linear-gradient(to top, darken($contrast, 15) 70%, $background2 70% 100%);
+            }
+
+            #skill-5 {
+                background: linear-gradient(to top, darken($contrast, 15) 80%, $background2 80% 100%);
+            }
+
+            #skill-6 {
+                background: linear-gradient(to top, darken($contrast, 15) 80%, $background2 80% 100%);
+            }
+
+            #skill-7 {
+                background: linear-gradient(to top, darken($contrast, 15) 50%, $background2 50% 100%);
+            }
+        }
+    }
+
+    #samples {
+        grid-area: samples;
+        background-color: $textcolor;
+    }
+
+    #contact {
+        grid-area: footer;
+        background-color: $background;
+    }
+    @include desktop() {
+        grid-template-columns: 50vw;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "about skills"
+            "samples samples"
+            "footer footer";
+
+        article,
+        section {
+            padding: ($navheight +15) 3em 1em;
+        }
     }
 }
