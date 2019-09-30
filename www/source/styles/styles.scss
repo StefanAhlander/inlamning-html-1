@@ -93,14 +93,18 @@ body {
 
 /*  If browser is IE or Edge don't use parallax scroll. */
 .ie .container {
-    perspective: 0px;
+    @supports (perspective: 2px) {
 
-    .back_layer_2 {
-        transform: none;
-    }
 
-    .back_layer_1 {
-        transform: none;
+        perspective: 0px;
+
+        .back_layer_2 {
+            transform: none;
+        }
+
+        .back_layer_1 {
+            transform: none;
+        }
     }
 }
 

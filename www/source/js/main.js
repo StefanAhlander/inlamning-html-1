@@ -24,4 +24,4 @@ function detectIE() {
     return false;
 }
 
-if (detectIE()) document.body.classList.add("ie");
+if (!detectIE()) document.body.classList.remove("ie");

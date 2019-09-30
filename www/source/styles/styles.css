@@ -68,19 +68,19 @@ body {
 }
 
 /*  If browser is IE or Edge don't use parallax scroll. */
-.ie .container {
-  -webkit-perspective: 0px;
-          perspective: 0px;
-}
-
-.ie .container .back_layer_2 {
-  -webkit-transform: none;
-          transform: none;
-}
-
-.ie .container .back_layer_1 {
-  -webkit-transform: none;
-          transform: none;
+@supports ((-webkit-perspective: 2px) or (perspective: 2px)) {
+  .ie .container {
+    -webkit-perspective: 0px;
+            perspective: 0px;
+  }
+  .ie .container .back_layer_2 {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .ie .container .back_layer_1 {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 nav {
