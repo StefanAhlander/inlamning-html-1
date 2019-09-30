@@ -3,17 +3,10 @@ $contrast: rgb(207, 192, 146);
 $background2: rgb(85, 48, 60);
 $textcolor: rgb(244, 244, 244);
 
-$mobile-width: 360px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
 $navheight: 80px;
-
-@mixin mobile-lg {
-    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
-        @content;
-    }
-}
 
 @mixin tablet {
     @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
@@ -47,7 +40,7 @@ body {
 
 /* Container-element for all content besides navigation. */
 .container {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     perspective: 2px;
     overflow-x: hidden;
@@ -56,7 +49,7 @@ body {
     position: relative;
 
     .parallax {
-        height: 100vh;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
@@ -79,17 +72,17 @@ body {
 
         img {
             width: auto;
-            height: 100vh;
+            height: 100%;
         }
     }
 
-    @include tablet(){
+    @include tablet() {
         .back_layer_1 img {
             margin-left: 10%;
         }
     }
 
-    @include desktop(){
+    @include desktop() {
         .back_layer_1 img {
             margin-left: 15%;
         }
@@ -140,7 +133,7 @@ nav {
         padding: 21px 16px 20px;
         margin: 5px;
         border: 3px solid $contrast;
-        perspective: 1200px;
+        perspective: 1000px;
 
         /*  Style input-checkbox to overlay "hamburger-menu" but to be transparent.
             This is the element that will toggle the menu on checked. */
@@ -184,10 +177,10 @@ nav {
             background: $contrast;
             border-radius: 3px;
             z-index: 1;
-            transform-origin: 4px 0px;
+            transform-origin: 5px 0px;
             transition: transform 0.5s ease-in-out,
                 background-color 0.5s ease-in-out,
-                opacity 0.55s ease;
+                opacity 0.6s ease;
 
             &:first-child {
                 transform-origin: 0% 0%;
@@ -224,7 +217,6 @@ nav {
         a {
             text-decoration: none;
             color: $background;
-            transition: color 0.3s ease;
 
             &:hover {
                 text-decoration: underline;
@@ -239,7 +231,7 @@ nav {
     @include desktop() {
         #menu_container {
             position: absolute;
-            user-select: none;
+            user-select: text;
             background-color: $background;
             border-radius: 0;
             width: 100vw;
@@ -261,7 +253,6 @@ nav {
             margin: 0;
             padding: 0;
             background: $background;
-            list-style-type: none;
             -webkit-font-smoothing: antialiased;
             transform: none;
             opacity: 1;
@@ -291,7 +282,6 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
 
     h1 {
         font-size: 1.5em;

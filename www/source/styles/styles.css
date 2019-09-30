@@ -20,7 +20,7 @@ body {
 
 /* Container-element for all content besides navigation. */
 .container {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   -webkit-perspective: 2px;
           perspective: 2px;
@@ -31,7 +31,7 @@ body {
 }
 
 .container .parallax {
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -55,7 +55,7 @@ body {
 
 .container .back_layer_1 img {
   width: auto;
-  height: 100vh;
+  height: 100%;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -119,8 +119,8 @@ nav #menu_container {
   padding: 21px 16px 20px;
   margin: 5px;
   border: 3px solid #cfc092;
-  -webkit-perspective: 1200px;
-          perspective: 1200px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
   /*  Style input-checkbox to overlay "hamburger-menu" but to be transparent.
             This is the element that will toggle the menu on checked. */
   /*  Setup the bars for the "hamburger-menu" also set up transition on
@@ -169,12 +169,12 @@ nav #menu_container span {
   background: #cfc092;
   border-radius: 3px;
   z-index: 1;
-  -webkit-transform-origin: 4px 0px;
-          transform-origin: 4px 0px;
-  -webkit-transition: background-color 0.5s ease-in-out, opacity 0.55s ease, -webkit-transform 0.5s ease-in-out;
-  transition: background-color 0.5s ease-in-out, opacity 0.55s ease, -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, opacity 0.55s ease;
-  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, opacity 0.55s ease, -webkit-transform 0.5s ease-in-out;
+  -webkit-transform-origin: 5px 0px;
+          transform-origin: 5px 0px;
+  -webkit-transition: background-color 0.5s ease-in-out, opacity 0.6s ease, -webkit-transform 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out, opacity 0.6s ease, -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, opacity 0.6s ease;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, opacity 0.6s ease, -webkit-transform 0.5s ease-in-out;
 }
 
 nav #menu_container span:first-child {
@@ -217,8 +217,6 @@ nav #menu {
 nav #menu a {
   text-decoration: none;
   color: #282d36;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
 }
 
 nav #menu a:hover {
@@ -232,10 +230,10 @@ nav #menu li {
 @media (min-width: 1024px) {
   nav #menu_container {
     position: absolute;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
     background-color: #282d36;
     border-radius: 0;
     width: 100vw;
@@ -256,7 +254,6 @@ nav #menu li {
     margin: 0;
     padding: 0;
     background: #282d36;
-    list-style-type: none;
     -webkit-font-smoothing: antialiased;
     -webkit-transform: none;
             transform: none;
@@ -293,7 +290,6 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: center;
 }
 
 header h1 {
