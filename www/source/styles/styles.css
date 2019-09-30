@@ -18,11 +18,6 @@ body {
   transition: none !important;
 }
 
-/* Helper-id to fix scrolling to home issue caused by fixed nav. */
-#home {
-  margin-top: -80px;
-}
-
 /* Container-element for all content besides navigation. */
 .container {
   width: 100%;
@@ -33,7 +28,6 @@ body {
   overflow-y: auto;
   scroll-behavior: smooth;
   position: relative;
-  top: 80px;
 }
 
 .container .parallax {
@@ -43,12 +37,11 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+  padding-top: 80px;
 }
 
 .container .back_layer_2 {
   z-index: -2;
-  -webkit-transform: translateZ(-3px) scale(2.6);
-          transform: translateZ(-3px) scale(2.6);
 }
 
 .container .back_layer_2 img {
@@ -58,8 +51,6 @@ body {
 
 .container .back_layer_1 {
   z-index: -1;
-  -webkit-transform: translateZ(-2px) scale(2);
-          transform: translateZ(-2px) scale(2);
 }
 
 .container .back_layer_1 img {
@@ -67,19 +58,35 @@ body {
   height: 100vh;
 }
 
-/*  If browser is IE or Edge don't use parallax scroll. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container .back_layer_1 img {
+    margin-left: 10%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container .back_layer_1 img {
+    margin-left: 15%;
+  }
+}
+
+/*  If browser is not IE or Edge and supports perspective use parallax scroll.
+    Parallax scrolling in IE/Edge is broken.
+    If Javascript is disabled there is no way of telling if the browser
+    is IE/Edge and therefore the safe option is to not use Parallax. If so
+    the class .ie will not be removed and the CSS will not use perspective. */
 @supports ((-webkit-perspective: 2px) or (perspective: 2px)) {
-  .ie .container {
-    -webkit-perspective: 0px;
-            perspective: 0px;
+  body:not(.ie) .container {
+    -webkit-perspective: 2px;
+            perspective: 2px;
   }
-  .ie .container .back_layer_2 {
-    -webkit-transform: none;
-            transform: none;
+  body:not(.ie) .container .back_layer_2 {
+    -webkit-transform: translateZ(-3px) scale(2.6);
+            transform: translateZ(-3px) scale(2.6);
   }
-  .ie .container .back_layer_1 {
-    -webkit-transform: none;
-            transform: none;
+  body:not(.ie) .container .back_layer_1 {
+    -webkit-transform: translateZ(-2px) scale(2);
+            transform: translateZ(-2px) scale(2);
   }
 }
 

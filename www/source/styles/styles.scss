@@ -45,11 +45,6 @@ body {
     transition: none !important;
 }
 
-/* Helper-id to fix scrolling to home issue caused by fixed nav. */
-#home {
-    margin-top: -$navheight;
-}
-
 /* Container-element for all content besides navigation. */
 .container {
     width: 100%;
@@ -59,7 +54,6 @@ body {
     overflow-y: auto;
     scroll-behavior: smooth;
     position: relative;
-    top: $navheight;
 
     .parallax {
         height: 100vh;
@@ -68,11 +62,11 @@ body {
         left: 0;
         bottom: 0;
         right: 0;
+        padding-top: $navheight;
     }
 
     .back_layer_2 {
         z-index: -2;
-        transform: translateZ(-3px) scale(2.6);
 
         img {
             width: 100%;
@@ -82,28 +76,42 @@ body {
 
     .back_layer_1 {
         z-index: -1;
-        transform: translateZ(-2px) scale(2);
 
         img {
             width: auto;
             height: 100vh;
         }
     }
+
+    @include tablet(){
+        .back_layer_1 img {
+            margin-left: 10%;
+        }
+    }
+
+    @include desktop(){
+        .back_layer_1 img {
+            margin-left: 15%;
+        }
+    }
 }
 
-/*  If browser is IE or Edge don't use parallax scroll. */
-.ie .container {
+/*  If browser is not IE or Edge and supports perspective use parallax scroll.
+    Parallax scrolling in IE/Edge is broken.
+    If Javascript is disabled there is no way of telling if the browser
+    is IE/Edge and therefore the safe option is to not use Parallax. If so
+    the class .ie will not be removed and the CSS will not use perspective. */
+body:not(.ie) .container {
     @supports (perspective: 2px) {
 
-
-        perspective: 0px;
+        perspective: 2px;
 
         .back_layer_2 {
-            transform: none;
+            transform: translateZ(-3px) scale(2.6);
         }
 
         .back_layer_1 {
-            transform: none;
+            transform: translateZ(-2px) scale(2);
         }
     }
 }
