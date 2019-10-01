@@ -46,7 +46,7 @@
 
         <main>
 
-            <article id="about">
+            <article id="about" aria-label="Some info about Stefan Åhlander">
                 <h2>First a little about me</h2>
                 <p>I was born in 1973 in Uppsala, Sweden. That makes me older than young.</p>
                 <p>I had an early interest for computers and programing and still remember the Commodore VIC 20 my
@@ -81,7 +81,7 @@
                 </p>
             </article>
 
-            <section id="skills">
+            <section id="skills" aria-label="My current relevant skills">
                 <div id="skills-inner">
 
                     <h2>My current skills are:</h2>
@@ -98,26 +98,32 @@
                 </div>
             </section>
 
-            <section id="samples">
+            <section id="samples" aria-label="Samples of my previous work">
                 <h2>Some samples of my previous work</h2>
 
                 <div id="samples-inner">
 
-                    <div>
+                    <div aria-label="Image of and link to the website for Rödfärgarna">
                         <h3>Website for Rödfärgarna</h3>
-                        <img src="./imgages/rodfargarna.jpg" alt="Rödfärgarna landing page">
-                        <p>Click here to visit <a href="https://rodfargarna.se/home" target="-blank">the website for
+                        <picture>
+                            <source media="(min-width: 780px)" srcset="./imgages/rodfargarna.jpg">
+                            <img src="./imgages/rodfargarna-small.jpg" alt="Rödfärgarna landing page">
+                        </picture>
+                        <p>Click here to visit <a href="https://rodfargarna.se/hem.php" target="-blank">the website for
                                 Rödfärgarna</a>.</p>
                     </div>
 
-                    <div>
+                    <div aria-label="Image of and link to the website for Takvårdarna">
                         <h3>Website for Takvårdarna</h3>
-                        <img src="./imgages/takvardarna.jpg" alt="Takvårdarna landing page">
+                        <picture>
+                            <source media="(min-width: 780px)" srcset="./imgages/takvardarna.jpg">
+                            <img src="./imgages/takvardarna-small.jpg" alt="Takvårdarna landing page">
+                        </picture>
                         <p>Click here to visit <a href="https://takvardarna.se/home" target="-blank">the website for
                                 Takvårdarna</a>.</p>
                     </div>
 
-                    <div>
+                    <div aria-label="video of and link to the code repository for the Rödfärgarna CRM">
                         <h3>CRM system for Rödfärgarna</h3>
                         <video controls>
                             <source src="./imgages/rodfargarna-crm.mp4" type="video/mp4">
@@ -130,7 +136,7 @@
                                 Rödfärgarna</a> on GitHub.</p>
                     </div>
 
-                    <div>
+                    <div aria-label="Image of website for Rekond1Ettan">
                         <h3>Website for Rekond1Ettan</h3>
                         <object data="imgages/rekond1ettan.pdf" type="application/pdf">
                             Your browser does not support the object element. Consider downloading <a

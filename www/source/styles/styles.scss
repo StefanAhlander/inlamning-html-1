@@ -364,7 +364,8 @@ main {
         padding: ($navheight +5) 1em 1em;
     }
 
-    h2 {
+    h2,
+    h3 {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1.3em;
         margin-bottom: 1em;
@@ -440,11 +441,13 @@ main {
 
             $skill-level-list: 60% 60% 30% 70% 80% 80% 20% 50%;
             $i: 1;
+
             @each $c-skill-level in $skill-level-list {
                 #skill-#{$i} {
                     background: linear-gradient(to top, mix(black, $contrast, 60%) #{$c-skill-level}, $background2 #{$c-skill-level} 100%);
                 }
-                $i: $i +1;
+
+                $i: $i+1;
             }
         }
     }
@@ -453,12 +456,60 @@ main {
         grid-area: samples;
         background-color: $textcolor;
 
-        iframe {
-            width: 90vw;
-            height: 80vh;
-            border: 3px solid $background;
-            background-color: white;
+        h2, h3, p {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif
+        }
 
+        #samples-inner {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            h3 {
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+            }
+
+            div {
+                width: 100%;
+                border: 2px solid $background;
+                padding: 1em;
+                margin: 0 auto 1em;
+                text-align: center;
+            }
+
+            img,
+            video,
+            object {
+                width: 100%;
+            }
+
+            object {
+                height: 670px;
+            }
+        }
+
+        @include desktop() {
+            #samples-inner {
+                flex-direction: row;
+                justify-content: space-around;
+
+                div {
+                    width: 500px;
+                    margin: 0 0 1em;
+                }
+
+                img,
+                video,
+                object {
+                    width: 100%;
+                }
+
+                object {
+                    height: 300px;
+                }
+            }
         }
     }
 
