@@ -240,7 +240,7 @@ nav {
             padding: 20px;
             border: 0;
             margin: 0;
-            perspective: 0;
+            perspective: none;
         }
 
         #menu_container input,
@@ -444,7 +444,7 @@ main {
 
             @each $c-skill-level in $skill-level-list {
                 #skill-#{$i} {
-                    background: linear-gradient(to top, mix(black, $contrast, 60%) #{$c-skill-level}, $background2 #{$c-skill-level} 100%);
+                    background-image: linear-gradient(to top, mix(black, $contrast, 60%) #{$c-skill-level}, $background2 #{$c-skill-level} 100%);
                 }
 
                 $i: $i+1;
