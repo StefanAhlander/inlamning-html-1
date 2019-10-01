@@ -528,7 +528,9 @@ main #samples {
   background-color: #f4f4f4;
 }
 
-main #samples h2, main #samples h3, main #samples p {
+main #samples h2,
+main #samples h3,
+main #samples p {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -591,13 +593,6 @@ main #samples #samples-inner object {
   }
 }
 
-main #contact {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: footer;
-  background-color: #282d36;
-}
-
 @media (min-width: 1024px) {
   main {
     -ms-grid-columns: 50vw;
@@ -610,5 +605,46 @@ main #contact {
   main section {
     padding: 95px 3em 1em;
   }
+}
+
+#contact {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  background-color: #282d36;
+  min-height: 50vh;
+  color: #f4f4f4;
+  padding: 85px 1em 1em;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+#contact h2,
+#contact p {
+  margin-bottom: 1em;
+}
+
+#contact h2 {
+  font-size: 2em;
+}
+
+#contact p {
+  font-size: 1.5em;
+}
+
+#contact #copyright {
+  position: absolute;
+  bottom: 0.5em;
+  right: 1em;
+  font-size: 1em;
+}
+
+#contact a {
+  color: #f4f4f4;
+}
+
+#contact a:hover, #contact a:visited {
+  color: #cfc092;
 }
 /*# sourceMappingURL=styles.css.map */

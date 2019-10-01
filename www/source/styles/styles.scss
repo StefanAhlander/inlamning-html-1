@@ -456,7 +456,9 @@ main {
         grid-area: samples;
         background-color: $textcolor;
 
-        h2, h3, p {
+        h2,
+        h3,
+        p {
             text-align: center;
             font-family: Arial, Helvetica, sans-serif
         }
@@ -513,11 +515,6 @@ main {
         }
     }
 
-    #contact {
-        grid-area: footer;
-        background-color: $background;
-    }
-
     @include desktop() {
         grid-template-columns: 50vw;
         grid-template-rows: auto;
@@ -529,6 +526,46 @@ main {
         article,
         section {
             padding: ($navheight +15) 3em 1em;
+        }
+    }
+}
+
+#contact {
+    grid-area: footer;
+    background-color: $background;
+    min-height: 50vh;
+    color: $textcolor;
+    padding: ($navheight +5) 1em 1em;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+
+    h2,
+    p {
+        margin-bottom: 1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+    
+    p {
+        font-size: 1.5em;
+    }
+
+    #copyright {
+        position: absolute;
+        bottom: 0.5em;
+        right: 1em;
+        font-size: 1em;
+    }
+
+    a {
+        color: $textcolor;
+
+        &:hover,
+        &:visited {
+            color: $contrast;
         }
     }
 }
