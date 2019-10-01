@@ -11,6 +11,13 @@
 </head>
 
 <body class="ie">
+    <!-- I originaly used 'role="navigation"' but got warnings validating the code.
+        Also best practice acording to Google is to not use role attributes for elements
+        that have implicite roles. Like nav, header and main. To make the code validate
+        without errors these roles have been removed. The site has been audited in
+        Google dev tools and received a 100% accessibility rating which supports my
+        decission. -->
+
     <nav aria-label="Main menu" class="preload">
         <div id="menu_container">
             <input type="checkbox" aria-label="toggle button for menu" aria-expanded="false" role="button"/>
@@ -127,13 +134,12 @@
                                 Rödfärgarna</a> on GitHub.</p>
                     </div>
 
+                    <!-- The checklist for the course assignement states to use an <embed> tag
+                        to include a .pdf file. I have done so despite the fact that the
+                        <object> tag seems to be a better choice. -->
                     <div>
                         <h3>Website for Rekond1Ettan</h3>
-                        <object data="imgages/rekond1ettan.pdf" type="application/pdf">
-                            Your browser does not support the object element. Consider downloading <a
-                                href="https://www.google.com/intl/sv/chrome/">Google Chrome</a> for a better browsing
-                            experience.
-                        </object>
+                        <embed src="imgages/rekond1ettan.pdf" type="application/pdf"></embed>
                         <p>The website for Rekond1Ettan is no longer active. Click to <a
                                 href="./imgages/rekond1ettan.pdf" target="_blank">open PDF</a>.</p>
                     </div>

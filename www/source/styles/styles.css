@@ -562,11 +562,11 @@ main #samples #samples-inner div {
 
 main #samples #samples-inner img,
 main #samples #samples-inner video,
-main #samples #samples-inner object {
+main #samples #samples-inner embed {
   width: 100%;
 }
 
-main #samples #samples-inner object {
+main #samples #samples-inner embed {
   height: 670px;
 }
 
@@ -585,10 +585,10 @@ main #samples #samples-inner object {
   }
   main #samples #samples-inner img,
   main #samples #samples-inner video,
-  main #samples #samples-inner object {
+  main #samples #samples-inner embed {
     width: 100%;
   }
-  main #samples #samples-inner object {
+  main #samples #samples-inner embed {
     height: 300px;
   }
 }
