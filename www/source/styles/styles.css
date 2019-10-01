@@ -625,19 +625,11 @@ main #samples #samples-inner object {
   margin-bottom: 1em;
 }
 
-#contact h2 {
-  font-size: 2em;
-}
-
-#contact p {
-  font-size: 1.5em;
-}
-
 #contact #copyright {
   position: absolute;
   bottom: 0.5em;
   right: 1em;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 #contact a {
