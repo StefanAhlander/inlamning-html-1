@@ -434,38 +434,17 @@ main {
                 border-radius: 50%;
                 margin: 0 auto;
                 position: absolute;
+                text-align: center;
+                line-height: 4.5em;
             }
 
-            #skill-1 {
-                background: linear-gradient(to top, darken($contrast, 15) 60%, $background2 60% 100%);
-            }
-
-            #skill-2 {
-                background: linear-gradient(to top, darken($contrast, 15) 60%, $background2 60% 100%);
-            }
-
-            #skill-3 {
-                background: linear-gradient(to top, darken($contrast, 15) 30%, $background2 30% 100%);
-            }
-
-            #skill-4 {
-                background: linear-gradient(to top, darken($contrast, 15) 70%, $background2 70% 100%);
-            }
-
-            #skill-5 {
-                background: linear-gradient(to top, darken($contrast, 15) 80%, $background2 80% 100%);
-            }
-
-            #skill-6 {
-                background: linear-gradient(to top, darken($contrast, 15) 80%, $background2 80% 100%);
-            }
-
-            #skill-7 {
-                background: linear-gradient(to top, darken($contrast, 15) 20%, $background2 20% 100%);
-            }
-
-            #skill-8 {
-                background: linear-gradient(to top, darken($contrast, 15) 50%, $background2 50% 100%);
+            $skill-level-list: 60% 60% 30% 70% 80% 80% 20% 50%;
+            $i: 1;
+            @each $c-skill-level in $skill-level-list {
+                #skill-#{$i} {
+                    background: linear-gradient(to top, mix(black, $contrast, 60%) #{$c-skill-level}, $background2 #{$c-skill-level} 100%);
+                }
+                $i: $i +1;
             }
         }
     }
@@ -479,7 +458,7 @@ main {
             height: 80vh;
             border: 3px solid $background;
             background-color: white;
-            
+
         }
     }
 
@@ -487,6 +466,7 @@ main {
         grid-area: footer;
         background-color: $background;
     }
+
     @include desktop() {
         grid-template-columns: 50vw;
         grid-template-rows: auto;
