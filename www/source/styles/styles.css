@@ -614,7 +614,7 @@ main #samples #samples-inner object {
   background-color: #282d36;
   min-height: 50vh;
   color: #f4f4f4;
-  padding: 85px 1em 1em;
+  padding: 85px 0.5em 1em;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;

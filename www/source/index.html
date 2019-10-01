@@ -11,43 +11,41 @@
 </head>
 
 <body class="ie">
-    <nav role="navigation" class="preload">
+    <nav role="navigation" aria-label="Main menu" class="preload">
         <div id="menu_container">
-            <label for="menu-toggle-button"></label>
-            <input id="menu-toggle-button" type="checkbox" />
+            <input type="checkbox" aria-label="toggle button for menu" aria-expanded="false" />
 
             <span></span>
             <span></span>
             <span></span>
 
-            <ul id="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#samples">Samples</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul id="menu" role="menubar" aria-label="Main menu">
+                <li><a href="#home" role="menuitem">Home</a></li>
+                <li><a href="#about" role="menuitem">About</a></li>
+                <li><a href="#skills" role="menuitem">Skills</a></li>
+                <li><a href="#samples" role="menuitem">Samples</a></li>
+                <li><a href="#contact" role="menuitem">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
 
-        <div class="parallax back_layer_2">
+        <div class="parallax back_layer_2" aria-hidden="true" role="none">
             <img src="./imgages/sai-kiran-anagani-5Ntkpxqt54Y-unsplash-1920x1080.jpg" alt="Some code">
         </div>
 
-        <div class="parallax back_layer_1">
+        <div class="parallax back_layer_1" aria-label="Image of stefan in a suit">
             <img src="./imgages/stefan-kostym.png" alt="Stefan in a suit">
         </div>
 
-        <header id="home">
+        <header id="home" role="banner">
             <h1>Hi! I'm Stefan Åhlander</h1>
             <p>Soon to be a Fullstack Developer</p>
             <p>Lets begin&hellip;<span>&nbsp;</span>
         </header>
 
-        <main>
-
+        <main role="main">
             <article id="about" aria-label="Some info about Stefan Åhlander">
                 <h2>First a little about me</h2>
                 <p>I was born in 1973 in Uppsala, Sweden, which makes me older than young.</p>
@@ -78,7 +76,7 @@
                 <div id="skills-inner">
 
                     <h2>My current skills are:</h2>
-                    <ul>
+                    <ul aria-label="list of my skills and level">
                         <li><span>HTML/CSS</span> <span> <span id="skill-1">60%</span> </span></li>
                         <li><span>Javascript</span> <span> <span id="skill-2">60%</span> </span></li>
                         <li><span>Design</span> <span> <span id="skill-3">30%</span> </span></li>
@@ -129,7 +127,7 @@
                                 Rödfärgarna</a> on GitHub.</p>
                     </div>
 
-                    <div aria-label="Image of website for Rekond1Ettan">
+                    <div aria-label="pdf of website for Rekond1Ettan">
                         <h3>Website for Rekond1Ettan</h3>
                         <object data="imgages/rekond1ettan.pdf" type="application/pdf">
                             Your browser does not support the object element. Consider downloading <a
@@ -145,11 +143,11 @@
 
         <footer id="contact">
             <h2>Contact info</h2>
-            <p><span class="fas fa-envelope"></span> Email: <a href="mailto:stefan.ahlander@chasacademy.se">Stefan
+            <p aria-label="email information"><span class="fas fa-envelope"></span> Email: <a href="mailto:stefan.ahlander@chasacademy.se">Stefan
                     Åhlander</a></p>
-            <p><span class="fab fa-github"></span> GitHub: <a href="https://github.com/StefanAhlander"
-                    target="_blank">StefanAhlander</a> account</p>
-            <p id="copyright"><span class="far fa-copyright"></span> Copyright 2019 Stefan Åhlander</p>
+            <p aria-label="link to github account"><span class="fab fa-github"></span> GitHub: <a href="https://github.com/StefanAhlander" target="_blank"
+                    rel="noopener">StefanAhlander</a></p>
+            <p aria-label="copyright info" id="copyright"><span class="far fa-copyright"></span> Copyright 2019 Stefan Åhlander</p>
         </footer>
     </div>
 
