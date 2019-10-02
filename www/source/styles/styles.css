@@ -482,43 +482,43 @@ main #skills ul span > span {
 }
 
 main #skills ul #skill-1 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #534d3a), color-stop(60%, #55303c));
-  background: linear-gradient(to top, #534d3a 0 60%, #55303c 60% 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #534d3a), color-stop(60%, #55303c));
+  background: linear-gradient(to top, #534d3a 60%, #55303c 60%);
 }
 
 main #skills ul #skill-2 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #534d3a), color-stop(60%, #55303c));
-  background: linear-gradient(to top, #534d3a 0 60%, #55303c 60% 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #534d3a), color-stop(60%, #55303c));
+  background: linear-gradient(to top, #534d3a 60%, #55303c 60%);
 }
 
 main #skills ul #skill-3 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #534d3a), color-stop(30%, #55303c));
-  background: linear-gradient(to top, #534d3a 0 30%, #55303c 30% 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #534d3a), color-stop(30%, #55303c));
+  background: linear-gradient(to top, #534d3a 30%, #55303c 30%);
 }
 
 main #skills ul #skill-4 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #534d3a), color-stop(70%, #55303c));
-  background: linear-gradient(to top, #534d3a 0 70%, #55303c 70% 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(70%, #534d3a), color-stop(70%, #55303c));
+  background: linear-gradient(to top, #534d3a 70%, #55303c 70%);
 }
 
 main #skills ul #skill-5 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #534d3a), color-stop(80%, #55303c));
-  background: linear-gradient(to top, #534d3a 0 80%, #55303c 80% 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(80%, #534d3a), color-stop(80%, #55303c));
+  background: linear-gradient(to top, #534d3a 80%, #55303c 80%);
 }
 
 main #skills ul #skill-6 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #534d3a), color-stop(80%, #55303c));
-  background: linear-gradient(to top, #534d3a 0 80%, #55303c 80% 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(80%, #534d3a), color-stop(80%, #55303c));
+  background: linear-gradient(to top, #534d3a 80%, #55303c 80%);
 }
 
 main #skills ul #skill-7 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #534d3a), color-stop(20%, #55303c));
-  background: linear-gradient(to top, #534d3a 0 20%, #55303c 20% 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(20%, #534d3a), color-stop(20%, #55303c));
+  background: linear-gradient(to top, #534d3a 20%, #55303c 20%);
 }
 
 main #skills ul #skill-8 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #534d3a), color-stop(50%, #55303c));
-  background: linear-gradient(to top, #534d3a 0 50%, #55303c 50% 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #534d3a), color-stop(50%, #55303c));
+  background: linear-gradient(to top, #534d3a 50%, #55303c 50%);
 }
 
 main #samples {
