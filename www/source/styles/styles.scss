@@ -444,7 +444,8 @@ main {
 
             @each $c-skill-level in $skill-level-list {
                 #skill-#{$i} {
-                    background: linear-gradient(to top, mix(black, $contrast, 60%) #{$c-skill-level}, $background2 #{$c-skill-level});
+                    background: linear-gradient(to top, mix(black, $contrast, 60%) #{$c-skill-level},
+                        $background2 #{$c-skill-level});
                 }
 
                 $i: $i+1;
