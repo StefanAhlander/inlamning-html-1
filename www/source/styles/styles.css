@@ -525,7 +525,7 @@ main #samples {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: samples;
-  background-color: #f4f4f4;
+  background-color: #ececec;
 }
 
 main #samples h2,

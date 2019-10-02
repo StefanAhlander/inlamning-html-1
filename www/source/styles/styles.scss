@@ -455,7 +455,7 @@ main {
 
     #samples {
         grid-area: samples;
-        background-color: $textcolor;
+        background-color: darken($textcolor, 3);
 
         h2,
         h3,
