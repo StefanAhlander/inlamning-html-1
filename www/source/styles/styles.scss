@@ -394,7 +394,7 @@ main {
         align-items: center;
         align-content: center;
 
-        h2 {
+        h2, p {
             text-align: center;
         }
 
@@ -409,6 +409,7 @@ main {
             li {
                 display: block;
                 padding: 1.5em;
+                text-align: center;
             }
 
             span {
@@ -439,7 +440,7 @@ main {
                 line-height: 4.5em;
             }
 
-            $skill-level-list: 60% 60% 30% 70% 80% 80% 20% 50%;
+            $skill-level-list: 60% 65% 30% 65% 75% 65% 75% 25% 50%;
             $i: 1;
 
             @each $c-skill-level in $skill-level-list {

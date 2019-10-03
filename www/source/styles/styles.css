@@ -427,7 +427,7 @@ main #skills {
       align-content: center;
 }
 
-main #skills h2 {
+main #skills h2, main #skills p {
   text-align: center;
 }
 
@@ -451,6 +451,7 @@ main #skills ul {
 main #skills ul li {
   display: block;
   padding: 1.5em;
+  text-align: center;
 }
 
 main #skills ul span {
@@ -487,8 +488,8 @@ main #skills ul #skill-1 {
 }
 
 main #skills ul #skill-2 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #534d3a), color-stop(60%, #55303c));
-  background: linear-gradient(to top, #534d3a 60%, #55303c 60%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(65%, #534d3a), color-stop(65%, #55303c));
+  background: linear-gradient(to top, #534d3a 65%, #55303c 65%);
 }
 
 main #skills ul #skill-3 {
@@ -497,26 +498,31 @@ main #skills ul #skill-3 {
 }
 
 main #skills ul #skill-4 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(70%, #534d3a), color-stop(70%, #55303c));
-  background: linear-gradient(to top, #534d3a 70%, #55303c 70%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(65%, #534d3a), color-stop(65%, #55303c));
+  background: linear-gradient(to top, #534d3a 65%, #55303c 65%);
 }
 
 main #skills ul #skill-5 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(80%, #534d3a), color-stop(80%, #55303c));
-  background: linear-gradient(to top, #534d3a 80%, #55303c 80%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(75%, #534d3a), color-stop(75%, #55303c));
+  background: linear-gradient(to top, #534d3a 75%, #55303c 75%);
 }
 
 main #skills ul #skill-6 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(80%, #534d3a), color-stop(80%, #55303c));
-  background: linear-gradient(to top, #534d3a 80%, #55303c 80%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(65%, #534d3a), color-stop(65%, #55303c));
+  background: linear-gradient(to top, #534d3a 65%, #55303c 65%);
 }
 
 main #skills ul #skill-7 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(20%, #534d3a), color-stop(20%, #55303c));
-  background: linear-gradient(to top, #534d3a 20%, #55303c 20%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(75%, #534d3a), color-stop(75%, #55303c));
+  background: linear-gradient(to top, #534d3a 75%, #55303c 75%);
 }
 
 main #skills ul #skill-8 {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(25%, #534d3a), color-stop(25%, #55303c));
+  background: linear-gradient(to top, #534d3a 25%, #55303c 25%);
+}
+
+main #skills ul #skill-9 {
   background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #534d3a), color-stop(50%, #55303c));
   background: linear-gradient(to top, #534d3a 50%, #55303c 50%);
 }
