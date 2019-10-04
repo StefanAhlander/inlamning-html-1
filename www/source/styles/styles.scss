@@ -440,7 +440,7 @@ main {
                 line-height: 4.5em;
             }
 
-            $skill-level-list: 60% 65% 30% 65% 75% 65% 75% 25% 50%;
+            $skill-level-list: 55% 60% 30% 65% 75% 65% 75% 25% 50%;
             $i: 1;
 
             @each $c-skill-level in $skill-level-list {
@@ -456,7 +456,7 @@ main {
 
     #samples {
         grid-area: samples;
-        background-color: darken($textcolor, 3);
+        background-color: $textcolor;
 
         h2,
         h3,
@@ -477,7 +477,8 @@ main {
 
             div {
                 width: 100%;
-                border: 2px solid $background;
+                background-color: darken($textcolor, 6);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 padding: 1em;
                 margin: 0 auto 1em;
                 text-align: center;

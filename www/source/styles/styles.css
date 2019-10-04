@@ -483,13 +483,13 @@ main #skills ul span > span {
 }
 
 main #skills ul #skill-1 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #534d3a), color-stop(60%, #55303c));
-  background: linear-gradient(to top, #534d3a 60%, #55303c 60%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(55%, #534d3a), color-stop(55%, #55303c));
+  background: linear-gradient(to top, #534d3a 55%, #55303c 55%);
 }
 
 main #skills ul #skill-2 {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(65%, #534d3a), color-stop(65%, #55303c));
-  background: linear-gradient(to top, #534d3a 65%, #55303c 65%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #534d3a), color-stop(60%, #55303c));
+  background: linear-gradient(to top, #534d3a 60%, #55303c 60%);
 }
 
 main #skills ul #skill-3 {
@@ -531,7 +531,7 @@ main #samples {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: samples;
-  background-color: #ececec;
+  background-color: #f4f4f4;
 }
 
 main #samples h2,
@@ -560,7 +560,9 @@ main #samples #samples-inner h3 {
 
 main #samples #samples-inner div {
   width: 100%;
-  border: 2px solid #282d36;
+  background-color: #e5e5e5;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1em;
   margin: 0 auto 1em;
   text-align: center;
