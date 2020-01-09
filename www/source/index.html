@@ -2,166 +2,211 @@
 <html lang="en">
 
 <head>
-    <meta name="Description" content="Web portfolio for Stefan Åhlander showing of present skills and previous work.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="https://kit.fontawesome.com/bd5bbba34e.js" crossorigin="anonymous"></script>
-    <title>Stefan Åhlander - portfolio</title>
+  <meta name="Description" content="Web portfolio for Stefan Åhlander showing of present skills and previous work." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="https://kit.fontawesome.com/bd5bbba34e.js" crossorigin="anonymous"></script>
+  <title>Stefan Åhlander - portfolio</title>
 </head>
 
 <body class="ie">
-    <!-- I originaly used 'role="navigation"' but got warnings validating the code.
+  <!-- I originaly used 'role="navigation"' but got warnings validating the code.
         Also best practice acording to Google is to not use role attributes for elements
         that have implicite roles. Like nav, header and main. To make the code validate
         without errors these roles have been removed. The site has been audited in
         Google dev tools and received a 100% accessibility rating which supports my
         decission. -->
 
-    <nav aria-label="Main menu" class="preload">
-        <div id="menu_container">
-            <input type="checkbox" aria-label="toggle button for menu" aria-expanded="false" role="button" />
+  <nav aria-label="Main menu" class="preload">
+    <div id="menu_container">
+      <input type="checkbox" aria-label="toggle button for menu" aria-expanded="false" role="button" />
 
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
 
-            <ul id="menu" role="menubar" aria-label="Main menu">
-                <li role="menuitem"><a href="#home">Home</a></li>
-                <li role="menuitem"><a href="#about">About</a></li>
-                <li role="menuitem"><a href="#skills">Skills</a></li>
-                <li role="menuitem"><a href="#samples">Samples</a></li>
-                <li role="menuitem"><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+      <ul id="menu" role="menubar" aria-label="Main menu">
+        <li role="menuitem"><a href="#home">Home</a></li>
+        <li role="menuitem"><a href="#about">About</a></li>
+        <li role="menuitem"><a href="#skills">Skills</a></li>
+        <li role="menuitem"><a href="#samples">Samples</a></li>
+        <li role="menuitem"><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <div class="container">
-
-        <div class="parallax back_layer_2" aria-hidden="true">
-            <img src="./imgages/sai-kiran-anagani-5Ntkpxqt54Y-unsplash-1920x1080-compressor.jpg" alt="Some code">
-        </div>
-
-        <div class="parallax back_layer_1">
-            <img src="./imgages/stefan-kostym-compressor.png" alt="Stefan in a suit">
-        </div>
-
-        <header id="home">
-            <h1>Hi! I'm Stefan Åhlander</h1>
-            <p>Soon to be a Fullstack Developer</p>
-            <p>Lets begin&hellip;<span>&nbsp;</span>
-        </header>
-
-        <main>
-            <article id="about" aria-label="Some info about Stefan Åhlander">
-                <h2>First a little about me</h2>
-                <p>I was born in 1973 in Uppsala, Sweden, which makes me older than young.</p>
-                <p>I still remember the Commodore VIC 20 my father got me when I was a kid. I also remember writing my
-                    first
-                    programs in BASIC. When the Commodore 64 was introduced I pleaded with my parents to get one.
-                    A neighbouring boy a few years older than I had gotten into assembler
-                    programing and it seemed like magic to me. I was hooked and was writng code almost all my spare
-                    time. I was
-                    coding demos, hacking BBS's and cracking copy protecion on games.
-                </p>
-                <p>Me teens and adolecent years were a bit messy but I finaly settled into law school. After graduating
-                    with a degree in law I worked different jobs, and lived in Thailand for 18 months. Lately I have
-                    worked for a law firm specialized in criminal law and currently for a one man firm specializing in
-                    migration law. I do a lot of pro bono work helping refugees.
-                </p>
-                <p>In 2013 I was diagnosed with chronic renal failure. The illness has been progressing slowly but it's
-                    made me think about my choices in life and about what I want to do when I grow up. My mind allways
-                    goes back to my
-                    childhood passion for programing. Of course nothing will be like a childhood passion but I can't
-                    help but think that I should
-                    have made som different choices. Because I believe it's never too late I have decided to make an
-                    effort to change my career.
-                </p>
-            </article>
-
-            <section id="skills" aria-label="My current relevant skills">
-                <div id="skills-inner">
-
-                    <h2>My current skills are:</h2>
-                    <p>(In my own humble opinion)</p>
-                    <ul>
-                        <li><span>HTML/CSS</span> <span> <span id="skill-1">55%</span> </span></li>
-                        <li><span>Javascript</span> <span> <span id="skill-2">60%</span> </span></li>
-                        <li><span>Design</span> <span> <span id="skill-3">30%</span> </span></li>
-                        <li><span>Communication</span> <span> <span id="skill-4">65%</span> </span></li>
-                        <li><span>Logic</span> <span> <span id="skill-5">75%</span> </span></li>
-                        <li><span>Problem solving</span> <span> <span id="skill-6">65%</span> </span></li>
-                        <li><span>Searching for info</span> <span> <span id="skill-7">75%</span> </span></li>
-                        <li><span>PHP</span> <span> <span id="skill-8">25%</span> </span></li>
-                        <li><span>Everything else</span> <span> <span id="skill-9">50%</span> </span></li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="samples" aria-label="Samples of my previous work">
-                <h2>Some samples of my previous work</h2>
-
-                <div id="samples-inner">
-
-                    <div>
-                        <h3>Website for Rödfärgarna</h3>
-                        <picture>
-                            <source media="(min-width: 780px)" srcset="./imgages/rodfargarna-compressor.jpg">
-                            <img src="./imgages/rodfargarna-small-compressor.jpg" alt="Rödfärgarna landing page">
-                        </picture>
-                        <p>Click here to visit <a href="https://rodfargarna.se/hem.php" target="-blank">the website for
-                                Rödfärgarna</a>.</p>
-                    </div>
-
-                    <div>
-                        <h3>Website for Takvårdarna</h3>
-                        <picture>
-                            <source media="(min-width: 780px)" srcset="./imgages/takvardarna-compressor.jpg">
-                            <img src="./imgages/takvardarna-small-compressor.jpg" alt="Takvårdarna landing page">
-                        </picture>
-                        <p>Click here to visit <a href="https://takvardarna.se/home" target="-blank">the website for
-                                Takvårdarna</a>.</p>
-                    </div>
-
-                    <div>
-                        <h3>CRM system for Rödfärgarna</h3>
-                        <video controls>
-                            <source src="./imgages/rodfargarna-crm.mp4" type="video/mp4">
-                            Your browser does not support the video element. Consider downloading <a
-                                href="https://www.google.com/intl/sv/chrome/">Google Chrome</a> for a better browsing
-                            experience.
-                        </video>
-                        <p>Click here to visit <a href="https://github.com/StefanAhlander/rodfargarnaApp"
-                                target="-blank">the CRM code base for
-                                Rödfärgarna</a> on GitHub.</p>
-                    </div>
-
-                    <!-- The checklist for the course assignement states to use an <embed> tag
-                        to include a .pdf file. I have done so despite the fact that the
-                        <object> tag seems to be a better choice. -->
-                    <div>
-                        <h3>Website for Rekond1Ettan</h3>
-                        <embed src="imgages/rekond1ettan.pdf" type="application/pdf">
-                        <p>The website for Rekond1Ettan is no longer active. Click to <a
-                                href="./imgages/rekond1ettan.pdf" target="_blank">open PDF</a>.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer id="contact">
-            <h2>Contact info</h2>
-            <p><span class="fas fa-envelope"></span> Email: <a href="mailto:stefan.ahlander@chasacademy.se">Stefan
-                    Åhlander</a></p>
-            <p><span class="fab fa-github"></span> GitHub: <a href="https://github.com/StefanAhlander" target="_blank"
-                    rel="noopener">StefanAhlander</a></p>
-            <p id="copyright"><span class="far fa-copyright"></span> Copyright 2019 Stefan Åhlander</p>
-        </footer>
+  <div class="container">
+    <div class="parallax back_layer_2" aria-hidden="true">
+      <img src="./imgages/sai-kiran-anagani-5Ntkpxqt54Y-unsplash-1920x1080-compressor.jpg" alt="Some code" />
     </div>
 
-    <!-- Javascript to eliminate transitions to fire on page load  -->
-    <script src="./js/main.js"></script>
+    <div class="parallax back_layer_1">
+      <img src="./imgages/stefan-kostym-compressor.png" alt="Stefan in a suit" />
+    </div>
+
+    <header id="home">
+      <h1>Hi! I'm Stefan Åhlander</h1>
+      <p>Soon to be a Fullstack Developer</p>
+      <p>Lets begin&hellip;<span>&nbsp;</span></p>
+    </header>
+
+    <main>
+      <article id="about" aria-label="Some info about Stefan Åhlander">
+        <h2>First a little about me</h2>
+        <p>
+          I was born in 1973 in Uppsala, Sweden, which makes me older than
+          young.
+        </p>
+        <p>
+          I still remember the Commodore VIC 20 my father got me when I was a
+          kid. I also remember writing my first programs in BASIC. When the
+          Commodore 64 was introduced I pleaded with my parents to get one. A
+          neighbouring boy a few years older than I had gotten into assembler
+          programing and it seemed like magic to me. I was hooked and was
+          writng code almost all my spare time. I was coding demos, hacking
+          BBS's and cracking copy protecion on games.
+        </p>
+        <p>
+          Me teens and adolecent years were a bit messy but I finaly settled
+          into law school. After graduating with a degree in law I worked
+          different jobs, and lived in Thailand for 18 months. Lately I have
+          worked for a law firm specialized in criminal law and currently for
+          a one man firm specializing in migration law. I do a lot of pro bono
+          work helping refugees.
+        </p>
+        <p>
+          In 2013 I was diagnosed with chronic renal failure. The illness has
+          been progressing slowly but it's made me think about my choices in
+          life and about what I want to do when I grow up. My mind allways
+          goes back to my childhood passion for programing. Of course nothing
+          will be like a childhood passion but I can't help but think that I
+          should have made som different choices. Because I believe it's never
+          too late I have decided to make an effort to change my career.
+        </p>
+      </article>
+
+      <section id="skills" aria-label="My current relevant skills">
+        <div id="skills-inner">
+          <h2>My current skills are:</h2>
+          <p>(In my own humble opinion)</p>
+          <ul>
+            <li>
+              <span>HTML/CSS</span>
+              <span> <span id="skill-1">55%</span> </span>
+            </li>
+            <li>
+              <span>Javascript</span>
+              <span> <span id="skill-2">60%</span> </span>
+            </li>
+            <li>
+              <span>Design</span> <span> <span id="skill-3">30%</span> </span>
+            </li>
+            <li>
+              <span>Communication</span>
+              <span> <span id="skill-4">65%</span> </span>
+            </li>
+            <li>
+              <span>Logic</span> <span> <span id="skill-5">75%</span> </span>
+            </li>
+            <li>
+              <span>Problem solving</span>
+              <span> <span id="skill-6">65%</span> </span>
+            </li>
+            <li>
+              <span>Searching for info</span>
+              <span> <span id="skill-7">75%</span> </span>
+            </li>
+            <li>
+              <span>PHP</span> <span> <span id="skill-8">25%</span> </span>
+            </li>
+            <li>
+              <span>Everything else</span>
+              <span> <span id="skill-9">50%</span> </span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="samples" aria-label="Samples of my previous work">
+        <h2>Some samples of my previous work</h2>
+
+        <div id="samples-inner">
+          <div>
+            <h3>Website for Rödfärgarna</h3>
+            <picture>
+              <source media="(min-width: 780px)" srcset="./imgages/rodfargarna-compressor.jpg" />
+              <img src="./imgages/rodfargarna-small-compressor.jpg" alt="Rödfärgarna landing page" />
+            </picture>
+            <p>
+              Click here to visit
+              <a href="https://rodfargarna.se/hem.php" target="-blank">the website for Rödfärgarna</a>.
+            </p>
+          </div>
+
+          <div>
+            <h3>Website for Takvårdarna</h3>
+            <picture>
+              <source media="(min-width: 780px)" srcset="./imgages/takvardarna-compressor.jpg" />
+              <img src="./imgages/takvardarna-small-compressor.jpg" alt="Takvårdarna landing page" />
+            </picture>
+            <p>
+              Click here to visit
+              <a href="https://takvardarna.se/home" target="-blank">the website for Takvårdarna</a>.
+            </p>
+          </div>
+
+          <div>
+            <h3>CRM system for Rödfärgarna</h3>
+            <video controls>
+              <source src="./imgages/rodfargarna-crm.mp4" type="video/mp4" />
+              Your browser does not support the video element. Consider
+              downloading
+              <a href="https://www.google.com/intl/sv/chrome/">Google Chrome</a>
+              for a better browsing experience.
+            </video>
+            <p>
+              Click here to visit
+              <a href="https://github.com/StefanAhlander/rodfargarnaApp" target="-blank">the CRM code base for
+                Rödfärgarna</a>
+              on GitHub.
+            </p>
+          </div>
+
+          <!-- The checklist for the course assignement states to use an <embed> tag
+                        to include a .pdf file. I have done so despite the fact that the
+                        <object> tag seems to be a better choice. -->
+          <div>
+            <h3>Website for Rekond1Ettan</h3>
+            <embed src="imgages/rekond1ettan.pdf" type="application/pdf" />
+            <p>
+              The website for Rekond1Ettan is no longer active. Click to
+              <a href="./imgages/rekond1ettan.pdf" target="_blank">open PDF</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <h2>Contact info</h2>
+      <p>
+        <span class="fas fa-envelope"></span> Email:
+        <a href="mailto:stefan.ahlander@chasacademy.se">Stefan Åhlander</a>
+      </p>
+      <p>
+        <span class="fab fa-github"></span> GitHub:
+        <a href="https://github.com/StefanAhlander" target="_blank" rel="noopener">StefanAhlander</a>
+      </p>
+      <p id="copyright">
+        <span class="far fa-copyright"></span> Copyright 2019 Stefan Åhlander
+      </p>
+    </footer>
+  </div>
+
+  <!-- Javascript to eliminate transitions to fire on page load  -->
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
